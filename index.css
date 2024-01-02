@@ -1,0 +1,60 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+.flex {
+    display: flex;
+    gap: var(--gap, 1rem)
+}
+
+
+/* primary header */
+.logo {
+    margin: 2rem;
+}
+
+.primary-header {
+    align-items: center;
+    justify-content: space-between;
+        /* this shoots off the logo img to the left most side and the nav link to the right most side */
+}
+
+.primary-navigation {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    background: hsl(184 64% 50%);
+    backdrop-filter: blur(1rem);
+}
+
+@supports (backdrop-filter: blur(1rem)) {
+    /* backdrop-filter: blur(1rem) not supported in mozilla firefox */
+    .primary-navigation {
+        background: hsl(184 64% 50%/0.1);
+        backdrop-filter: blur(1rem);
+    }
+}
+
+.primary-navigation a {
+    text-decoration: none;
+}
+
+.primary-navigation a > [aria-hidden="true"] {
+    font-weight: 700;
+    margin-inline-end: 0.75rem;
+}
+
+@media (max-width: 767px) {
+    .primary-navigation {
+        --gap: 2rem;
+
+        position: fixed;
+        inset: 0 0 0 30%;
+        padding: min(30vh, 10rem) 2rem;
+
+        flex-direction: column;
+    }
+}

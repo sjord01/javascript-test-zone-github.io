@@ -5,14 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
     <title>Javascript Test Zone - Github</title>
+    <script src="nav.js" defer></script>
 </head>
 <body>
     <header class="primary-header flex">
         <div>
             <img src="./assets/shared/logoipsum-214.svg" class="logo">
         </div>
+
+        <button class="mobile-nav-toggle" 
+        aria-controls="primary-navigation" aria-expanded="false">
+            <span class="sr-only">Menu</span>
+        </button>
+        <!-- It identifies the element(s) that are controlled by the current element.
+            The "aria-controls" element should be a "button" or a "link".
+            
+            aria-expanded="false" bec on wider screens, initially, menu is NOT expanded;
+            On mobile screens, menu will be inside the btn element
+
+            The .sr-only class hides an element to all devices except screen readers:
+        
+        -->
+
         <nav>
-            <ul id="primary-navigation" class="primary-navigation flex">
+            <ul id="primary-navigation" data-visible="false" class="primary-navigation flex">
                 <li class="active"><a href="index.html">
                         <span aria-hidden="true" >00</span>Home
                     </a>
